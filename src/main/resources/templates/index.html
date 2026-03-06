@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&lt;Sukriti/&gt;</title>
+
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="icon" type="image/png" sizes="32x32" th:href="@{/favicon-32x32.png}">
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/favicon-16x16.png}">
+    <link rel="apple-touch-icon" th:href="@{/apple-touch-icon.png}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Navbar fragment -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<!-- HOME -->
+<section id="home" class="top-container section-offset">
+
+    <img class="top-cloud" th:src="@{/images/cloud.png}" alt="cloud-image">
+
+    <div class="hero-text">
+        <h1>I'm Sukriti</h1>
+        <h2 class="para">a <span class="web">web</span> developer.</h2>
+        <div th:if="${success}" id="toast" class="success-message" th:text="${success}"></div>
+    </div>
+
+    <img class="bottom-cloud" th:src="@{/images/cloud.png}" alt="cloud-image">
+
+    <!-- Mountain always pinned to bottom -->
+    <img class="mountain" th:src="@{/images/mountain.png}" alt="mountain-img">
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="middle-container section-offset">
+    <div class="profile">
+        <img class="profile-img" th:src="@{/images/woman.png}" alt="profile-img">
+        <h2>Hello.</h2>
+        <p class="intro">
+            I am a web developer. I'm the founder and CTO of MYclient. I love to play table tennis.
+        </p>
+    </div>
+
+    <hr class="line1">
+
+    <!-- SKILLS -->
+    <div id="skills" class="skills section-offset">
+        <h2>My Skills.</h2>
+
+        <div class="skill-row">
+            <img class="code-image"
+                 src="https://media4.giphy.com/media/iIGT8Y1rOYhBpdHh1C/giphy.gif?cid=ecf05e47ncl39ntchjp0rd964f41jb21jqktq9024hnamuij&rid=giphy.gif&ct=s"
+                 alt="code-image">
+            <h3>Design and Development</h3>
+            <p class="code-skill-description">
+                I started learning to code when I was 19 years old because I wanted to make my own website.
+                Over time, I gained experience designing and developing mobile and web applications.
+            </p>
+        </div>
+
+        <div class="skill-row">
+            <img class="tt-img" th:src="@{/images/table-tennis.png}" alt="tabletennis-img">
+            <h3>Play Table Tennis</h3>
+            <p class="tt-skill-description">
+                Accomplished table tennis player with multiple national medals. Represented my country in tournaments.
+                Passionate about the sport and always improving.
+            </p>
+        </div>
+    </div>
+
+    <hr class="line1">
+
+    <!-- CONTACT -->
+    <div id="contact" class="contact-me section-offset">
+        <h2>Get In Touch</h2>
+        <h3>If you love playing table tennis as much as I do.</h3>
+        <p class="contact-message">
+            Love playing table tennis as much as I do? Let's talk about how awesome it is!
+            We can code and then play table tennis.
+        </p>
+        <a class="btn" th:href="@{/contact}">CONTACT ME</a>
+    </div>
+</section>
+
+<!-- WORK / FOOTER -->
+<footer id="work" class="bottom-container section-offset">
+    <a class="footer-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+    <a class="footer-link" href="https://twitter.com/" target="_blank" rel="noreferrer">Twitter</a>
+    <a class="footer-link" href="https://www.facebook.com/sukriti.shrestha.39/" target="_blank" rel="noreferrer">Facebook</a>
+    <p class="copyright">© Sukriti Shrestha.</p>
+</footer>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

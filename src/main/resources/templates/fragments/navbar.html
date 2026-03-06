@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<header th:fragment="navbar" class="header">
+
+    <nav class="navbar">
+
+        <!-- Logo / Brand -->
+        <a href="/" class="brand">&lt;Sukriti/&gt;</a>
+
+        <!-- Mobile menu button -->
+        <button id="navToggle" class="nav-toggle" type="button">
+            ☰
+        </button>
+
+        <!-- Navigation links -->
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="/" >Home</a>
+            </li>
+
+            <li>
+                <a href="/#about">About</a>
+            </li>
+
+            <li>
+                <a href="/#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="/#work">Work</a>
+            </li>
+
+            <li>
+                <a th:href="@{/contact}">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById("navLinks");
+        nav.classList.toggle("show");
+    }
+</script>
+
+</body>
+</html>

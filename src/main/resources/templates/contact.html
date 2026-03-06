@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - &lt;Sukriti/&gt;</title>
+
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <link rel="icon" type="image/png" sizes="32x32" th:href="@{/favicon-32x32.png}">
+  <link rel="icon" type="image/png" sizes="16x16" th:href="@{/favicon-16x16.png}">
+  <link rel="apple-touch-icon" th:href="@{/apple-touch-icon.png}">
+  <link rel="shortcut icon" th:href="@{/favicon.ico}">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<section class="contact-page">
+
+  <h1>Contact Me</h1>
+  <p>If you want to work together, send me a message.</p>
+
+  <div th:if="${success}" id="toast" class="success-message" th:text="${success}"></div>
+
+  <form class="contact-form"
+        th:action="@{/contact}"
+        method="post"
+        th:object="${contact}">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+
+  </form>
+
+</section>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
